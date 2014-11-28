@@ -37,6 +37,7 @@ insert into Marks values(2, 9, 1, 2, 1);
 insert into Marks values(3, 9, 1, 3, 1);
 insert into Marks values(4, 8, 1, 4, 1);
 insert into Marks values(5, 9, 2, 4, 1);
+insert into Marks values(6, 8, 2, 1, 1);
 
 /* ----------- Truancy ---------------- */
 insert into Truancy values(1, TO_DATE('2003-05-03', 'yyyy-mm-dd'), 'Прогул', 1, 1);
