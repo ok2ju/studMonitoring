@@ -26,3 +26,4 @@ drop table WeekDay;
 alter table Schedule drop constraint FK_SCHEDULE_LESSONTIME;
 drop table LessonTime;
 drop table Schedule;
+#test
