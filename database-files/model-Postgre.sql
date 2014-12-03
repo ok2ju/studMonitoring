@@ -18,7 +18,7 @@ create table Class
 	id_class integer PRIMARY KEY,
 	class_number integer 
 	constraint NUMBER_CLASS_CONSTRAINT check (class_number between 1 and 11),
-	class_character char
+	class_character text
 	constraint CHARACTER_CLASS_CONSTRAINT check (class_character in ('А', 'Б', 'В', 'Г'))
 );
 
