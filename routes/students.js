@@ -24,4 +24,14 @@ router.get('/:klass', function(request, responce) {
   });
 });
 
+router.post('/', function(request, responce) {
+  var s = request.body;
+  student.save(s, function(err, result) {
+    if(err) {
+      return responce.send(err);
+    }
+    responce.json(result);
+  });
+});
+
 module.exports = router;

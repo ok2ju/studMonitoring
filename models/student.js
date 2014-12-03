@@ -26,4 +26,12 @@ student.classlist = function(klass, callback) {
   pg.executeSql(sql, [klass], callback);
 };
 
+student.save = function(student, callback) {
+  var s = student;
+  var sql = "insert into Student(name, surname, gender, dateEnrollment, id_elder, id_address, id_class) " +
+    "values($1, $2, $3, TO_DATE($4, 'yyyy-mm-dd'), $5, $6, $7);";
+
+  pg.executeSql(sql, [s.name, s.surname, s.gender, s.dateEnrollment, s.idElder, s.idAddress, s.idClass], callback);
+};
+
 module.exports = student;

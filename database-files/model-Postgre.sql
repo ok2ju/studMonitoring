@@ -32,7 +32,7 @@ create table Person
 
 create table Student
 (
-	id_student integer PRIMARY KEY,
+	id_student SERIAL PRIMARY KEY,
 	dateEnrollment date,
 	id_elder integer,
 	id_address integer,
