@@ -1,0 +1,158 @@
+@import "bourbon/bourbon.scss";
+@import "neat/neat.scss";
+@import "assets/partials/variables";
+@import "assets/partials/mixins"; 
+
+*{margin: 0; padding: 0;}
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
+body {
+	font: {
+		size: 100%;
+		family: $primary-font1;
+	}
+	color: $main-text;
+	background-color: $main-login-color;
+}
+
+.login-wrapper {
+	position: absolute;
+	@include center(xy);
+
+	.login-icon {
+		float: none;
+		margin-bottom: 20px;
+
+		h4 {
+			color: #fff;
+			font-weight: 300;
+			display: inline-block;
+
+			@include media(1100px) {
+				display: block;
+			}
+		}
+
+		small {
+			display: block;
+			font-weight: 700;
+		}
+
+		img {
+			width: 50px;
+
+			@include media(1100px) {
+				width: 100%;
+			}
+		}
+
+		@include media(1100px) {
+			float: left;
+			margin-right: 40px;
+			margin-bottom: 0;
+		}
+	}
+
+	.login-form {
+		width: 250px;
+		padding: 24px 23px 20px;
+		background-color: rgb(237, 239, 241);
+		border-radius: 6px;
+		float: left;
+
+		@include media(490px) {
+			width: 400px;
+		}
+	}
+
+	.form-group {
+		position: relative;
+		margin-bottom: 20px;
+
+		.login-field {
+			font-size: 17px;
+			text-indent: 3px;
+			border-color: transparent;
+		}
+
+		.form-control {
+			display: block;
+			width: 100%;
+			height: 45px;
+			padding: 6px 12px;
+			font-size: 17px;
+			line-height: 1.42857143;
+			background-color: #fff;
+			border-radius: 4px;
+			-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+
+		.form-control:focus {
+			border: 2px solid $main-login-color;
+			outline: none;
+		}
+
+		.login-field-icon {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 15px;
+			top: 11px;
+		}
+
+		.fui-user {
+			background-image: url(../images/person.svg);
+		}
+
+		.fui-lock {
+			background-image: url(../images/unlocked.svg);
+		}
+	}
+
+	.btn {
+		padding: 10px 19px;
+		font-size: 17px;
+		line-height: 1.471;
+		border-radius: 6px;
+		display: block;
+		width: 100%;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.btn:hover {
+		background-color: #5CBAE0;
+		transition: 1s;
+		-webkit-transition: 1s;
+	}
+
+	.btn-primary {
+		color: rgb(255, 255, 255);
+		background-color: $main-login-color;
+	}
+
+	.lost-pass {
+		display: block;
+		margin-top: 15px;
+		font-size: 13px;
+		color: rgb(191, 201, 202);
+		text-align: center;
+		text-decoration: none;
+		transition: 0.25s;
+		-webkit-transition: 0.25s;
+	}
+
+	.lost-pass:hover {
+		color: $main-login-color;
+	}
+}
