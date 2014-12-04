@@ -5,18 +5,14 @@
             <th>Class</th>
             <th>Date Enroll</th>
             <th>Gender</th>
-            <th>Login</th>
         </tr>
     </thead>
     <tbody>
-
         <tr ng-repeat="student in students">
-            <td>{{student.name}} {{student.surname}}</td>
-            <td>{{student.classNumber}}{{student.classChar}}</td>
-            <td>{{student.dateEnrollment}}</td>
+            <td><a href="/#/students/{{student.id_student}}">{{student.name}} {{student.surname}}</a></td>
+            <td>{{student.class_number}}{{student.class_character}}</td>
+            <td>{{student.dateenrollment}}</td>
             <td>{{student.gender}}</td>
-            <td>{{student.login}}</td>
         </tr>
-
     </tbody>
 </table>

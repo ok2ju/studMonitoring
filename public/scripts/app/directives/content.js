@@ -5,5 +5,5 @@ angular.module('smAngular').directive('content', function() {
 		restrict: 'A',
 		templateUrl: 'views/content.html',
 		controller: 'ContentCtrl'
-	}
+	};
 });

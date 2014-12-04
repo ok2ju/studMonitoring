@@ -14,6 +14,17 @@ router.get('/', function(request, responce) {
   });
 });
 
+router.get('/:id', function(request, responce) {
+  var id = request.params.id;
+  console.log("StudentRouter - get id = " + id);
+  student.find(id, function(err, result) {
+    if(err) {
+      return responce.send(err);
+    }
+    responce.json(result.rows[0]);
+  });
+});
+
 router.get('/:klass', function(request, responce) {
   var klass = request.params.klass;
   student.classlist(klass, function(err, result) {

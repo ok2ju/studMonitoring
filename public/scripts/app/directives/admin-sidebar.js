@@ -5,5 +5,5 @@ angular.module('smAngular').directive('adminSidebar', function() {
 		restrict: 'E',
 		templateUrl: 'views/admin-sidebar.html',
 		controller: 'AdminSidebarCtrl'
-	}
+	};
 });

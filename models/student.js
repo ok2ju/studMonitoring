@@ -6,13 +6,23 @@ var pg = require('../utils/pgwrapper.js');
 var student = {};
 
 student.list = function(callback) {
-  var sql = 'select s.name, s.surname, dateEnrollment, street, '+
+  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, street, gender, '+
   'city, state, class_number, class_character '+
   'from Student s, Address, Class '+
   'where s.id_address = Address.id_address and '+
   's.id_class = Class.id_class;';
 
   pg.executeSql(sql, callback);
+};
+
+student.find = function(id, callback) {
+  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, street, gender, '+
+    'city, state, class_number, class_character '+
+    'from Student s, Address, Class '+
+    'where s.id_address = Address.id_address and '+
+    's.id_class = Class.id_class and s.id_student = $1;';
+
+  pg.executeSql(sql, [id], callback);
 };
 
 student.classlist = function(klass, callback) {

@@ -24,7 +24,7 @@
  * To see animations in action, all that is required is to define the appropriate CSS classes
  * or to register a JavaScript animation via the myModule.animation() function. The directives that support animation automatically are:
  * `ngRepeat`, `ngInclude`, `ngIf`, `ngSwitch`, `ngShow`, `ngHide`, `ngView` and `ngClass`. Custom directives can take advantage of animation
- * by using the `$animate` service.
+ * by using the `$animate` services.
  *
  * Below is a more detailed breakdown of the supported animation events provided by pre-existing ng directives:
  *
@@ -58,7 +58,7 @@
  * </style>
  *
  * <!--
- * the animate service will automatically add .ng-enter and .ng-leave to the element
+ * the animate services will automatically add .ng-enter and .ng-leave to the element
  * to trigger the CSS transition/animations
  * -->
  * <ANY class="slide" ng-include="..."></ANY>
@@ -82,7 +82,7 @@
  * will all animate without the block being applied to child elements.
  *
  * <h2>CSS-defined Animations</h2>
- * The animate service will automatically apply two CSS classes to the animated element and these two CSS classes
+ * The animate services will automatically apply two CSS classes to the animated element and these two CSS classes
  * are designed to contain the start and end CSS styling. Both CSS transitions and keyframe animations are supported
  * and can be used to play along with this naming structure.
  *
@@ -141,7 +141,7 @@
  * </div>
  * ```
  *
- * Both CSS3 animations and transitions can be used together and the animate service will figure out the correct duration and delay timing.
+ * Both CSS3 animations and transitions can be used together and the animate services will figure out the correct duration and delay timing.
  *
  * Upon DOM mutation, the event class is added first (something like `ng-enter`), then the browser prepares itself to add
  * the active class (in this case `ng-enter-active`) which then triggers the animation. The animation module will automatically
@@ -261,7 +261,7 @@ angular.module('ngAnimate', ['ng'])
    * @description
    *
    * The `$animateProvider` allows developers to register JavaScript animation event handlers directly inside of a module.
-   * When an animation is triggered, the $animate service will query the $animate service to find any animations that match
+   * When an animation is triggered, the $animate services will query the $animate services to find any animations that match
    * the provided name value.
    *
    * Requires the {@link ngAnimate `ngAnimate`} module to be installed.
@@ -283,7 +283,7 @@ angular.module('ngAnimate', ['ng'])
     };
   })
 
-  //this private service is only used within CSS-enabled animations
+  //this private services is only used within CSS-enabled animations
   //IE8 + IE9 do not support rAF natively, but that is fine since they
   //also don't support transitions and keyframes which means that the code
   //below will never be used by the two browsers.
@@ -539,17 +539,17 @@ angular.module('ngAnimate', ['ng'])
       }
 
       /**
-       * @ngdoc service
+       * @ngdoc services
        * @name $animate
        * @kind function
        *
        * @description
-       * The `$animate` service provides animation detection support while performing DOM operations (enter, leave and move) as well as during addClass and removeClass operations.
-       * When any of these operations are run, the $animate service
+       * The `$animate` services provides animation detection support while performing DOM operations (enter, leave and move) as well as during addClass and removeClass operations.
+       * When any of these operations are run, the $animate services
        * will examine any JavaScript-defined animations (which are defined by using the $animateProvider provider object)
        * as well as any CSS-defined animations against the CSS classes present on the element once the DOM operation is run.
        *
-       * The `$animate` service is used behind the scenes with pre-existing directives and animation with these directives
+       * The `$animate` services is used behind the scenes with pre-existing directives and animation with these directives
        * will work out of the box without any extra configuration.
        *
        * Requires the {@link ngAnimate `ngAnimate`} module to be installed.
@@ -644,7 +644,7 @@ angular.module('ngAnimate', ['ng'])
          * @kind function
          *
          * @description
-         * Fires the move DOM operation. Just before the animation starts, the animate service will either append it into the parentElement container or
+         * Fires the move DOM operation. Just before the animation starts, the animate services will either append it into the parentElement container or
          * add the element directly after the afterElement element if present. Then the move animation will be run. Once
          * the animation is started, the following CSS classes will be added for the duration of the animation:
          *
@@ -688,8 +688,8 @@ angular.module('ngAnimate', ['ng'])
          *
          * @description
          * Triggers a custom animation event based off the className variable and then attaches the className value to the element as a CSS class.
-         * Unlike the other animation methods, the animate service will suffix the className value with {@type -add} in order to provide
-         * the animate service the setup and active CSS classes in order to trigger the animation (this will be skipped if no CSS transitions
+         * Unlike the other animation methods, the animate services will suffix the className value with {@type -add} in order to provide
+         * the animate services the setup and active CSS classes in order to trigger the animation (this will be skipped if no CSS transitions
          * or keyframes are defined on the -add or base CSS class).
          *
          * Below is a breakdown of each step that occurs during addClass animation:
@@ -725,8 +725,8 @@ angular.module('ngAnimate', ['ng'])
          *
          * @description
          * Triggers a custom animation event based off the className variable and then removes the CSS class provided by the className value
-         * from the element. Unlike the other animation methods, the animate service will suffix the className value with {@type -remove} in
-         * order to provide the animate service the setup and active CSS classes in order to trigger the animation (this will be skipped if
+         * from the element. Unlike the other animation methods, the animate services will suffix the className value with {@type -remove} in
+         * order to provide the animate services the setup and active CSS classes in order to trigger the animation (this will be skipped if
          * no CSS transitions or keyframes are defined on the -remove or base CSS classes).
          *
          * Below is a breakdown of each step that occurs during removeClass animation:

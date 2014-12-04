@@ -13,144 +13,25 @@
 
 	<script src="scripts/app/app.js"></script>
 	<script src="scripts/app/controllers/top-menu.js"></script>
+	<script src="scripts/app/controllers/student-profile-ctrl.js"></script>
 	<script src="scripts/app/controllers/content.js"></script>
 	<script src="scripts/app/controllers/admin-sidebar.js"></script>
 	<script src="scripts/app/controllers/student-table.js"></script>
+	<script src="scripts/app/controllers/sidebar.js"></script>
 
 	<script src="scripts/app/directives/top-menu.js"></script>
 	<script src="scripts/app/directives/content.js"></script>
+	<script src="scripts/app/services/student-service.js"></script>
 	<script src="scripts/app/directives/students-table.js"></script>
+	<script src="scripts/app/directives/sidebar.js"></script>
 	<script src="scripts/app/directives/admin-sidebar.js"></script>
 	<script src="scripts/app/directives/student-sidebar.js"></script>
 
 </head>
 <body>
-	<header class="navigation" top-menu></header>
-	<section class="main-content-wrapper" content></section>
-	<div class="cd-popup student-popup" role="alert">
-		<div class="cd-popup-container">
-			<ul class="cd-switcher">
-				<li><a href="#0">Info</a></li>
-				<li><a href="#0">SysInfo</a></li>
-			</ul>
-			<div id="cd-info">
-				<form action="">
-					<fieldset>
-						<input class="form-input floated-input left-side-input" type="text" placeholder="Name">
-						<input class="form-input floated-input" type="text" placeholder="Surname">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="date">
-					</fieldset>
-					<fieldset>
-						<input type="radio" name="group1" value="Milk" checked> Male
-						<input type="radio" name="group1" value="Butter"> Female
-					</fieldset>
-					<fieldset>
-						<input class="form-input floated-input left-side-input" type="text" placeholder="State">
-						<input class="form-input floated-input" type="text" placeholder="City">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Street">
-					</fieldset>
-				</form>
-			</div>
-			<div id="cd-sysinfo">
-				<form action="">
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Login">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Password">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="date">
-					</fieldset>
-					<div class="class-selector">
-						<label for="">Class:</label>
-						<select class="slct" name="class-number" id="classNumber">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-						</select>
-						<select class="slct" name="class-char" id="classChar">
-							<option value="А">А</option>
-							<option value="Б">Б</option>
-							<option value="В">В</option>
-							<option value="Г">Г</option>
-							<option value="Д">Д</option>
-						</select>
-					</div>
-				</form>
-			</div>
-			
-			<ul class="cd-buttons">
-				<li><a href="#0">Create</a></li>
-				<li><a href="#0">Cancel</a></li>
-			</ul>
-			<a href="#0" class="cd-popup-close img-replace">Close</a>
-		</div> <!-- cd-popup-container -->
-	</div> <!-- cd-popup -->
-
-
-	<!-- Teacher Popup -->
-	<div class="cd-popup teacher-popup" role="alert">
-		<div class="cd-popup-container">
-			<ul class="cd-switcher">
-				<li><a href="#0">Info</a></li>
-				<li><a href="#0">SysInfo</a></li>
-			</ul>
-			<div id="cd-info">
-				<form action="">
-					<fieldset>
-						<input class="form-input floated-input left-side-input" type="text" placeholder="Name">
-						<input class="form-input floated-input" type="text" placeholder="Surname">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="date">
-					</fieldset>
-					<fieldset>
-						<input type="radio" name="group1" value="Milk" checked> Male
-						<input type="radio" name="group1" value="Butter"> Female
-					</fieldset>
-					<fieldset>
-						<input class="form-input floated-input left-side-input" type="text" placeholder="State">
-						<input class="form-input floated-input" type="text" placeholder="City">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Street">
-					</fieldset>
-				</form>
-			</div>
-			<div id="cd-sysinfo">
-				<form action="">
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Login">
-					</fieldset>
-					<fieldset>
-						<input class="form-input" type="text" placeholder="Password">
-					</fieldset>
-				</form>
-			</div>
-			
-			<ul class="cd-buttons">
-				<li><a href="#0">Create</a></li>
-				<li><a href="#0">Cancel</a></li>
-			</ul>
-			<a href="#0" class="cd-popup-close img-replace">Close</a>
-		</div>
-	</div>
-
-	<script src="scripts/libs/jQuery/jquery-1.11.1.min.js"></script>
-	<script src="scripts/libs/popout.js"></script>
-
+	<top-menu class="navigation"></top-menu>
+	<section class="main-content-wrapper">
+		<div ng-view=""></div>
+	</section>
 </body>
 </html>
