@@ -306,35 +306,6 @@ body {
   transition-duration: 0.3s; }
   .cd-popup-container p {
     padding: 1em 1em; }
-  .cd-popup-container .cd-buttons {
-    list-style: none; }
-    .cd-popup-container .cd-buttons:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cd-popup-container .cd-buttons li {
-      float: left;
-      width: 50%; }
-    .cd-popup-container .cd-buttons a {
-      text-decoration: none;
-      display: block;
-      height: 60px;
-      line-height: 60px;
-      text-transform: uppercase;
-      color: #FFF;
-      -webkit-transition: background-color 0.2s;
-      -moz-transition: background-color 0.2s;
-      transition: background-color 0.2s; }
-    .cd-popup-container .cd-buttons li:first-child a {
-      background: #fc7169;
-      border-radius: 0 0 0 .25em; }
-      .no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
-        background-color: #fc8982; }
-    .cd-popup-container .cd-buttons li:last-child a {
-      background: #b6bece;
-      border-radius: 0 0 .25em 0; }
-      .no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
-        background-color: #c5ccd8; }
   .cd-popup-container .cd-popup-close {
     position: absolute;
     top: 8px;
@@ -422,5 +393,66 @@ body {
 
 #cd-info.is-selected, #cd-sysinfo.is-selected {
   display: block; }
+
+/* Student form */
+.student-form {
+  width: 500px;
+  margin: 0 auto; }
+
+fieldset {
+  margin: 20px 40px;
+  border: none;
+  text-align: center; }
+
+.form-input {
+  width: 100%;
+  border: 1px solid #d2d8d8;
+  padding: 10px 20px 10px 50px; }
+
+.floated-input {
+  float: left;
+  width: 200px; }
+
+.left-side-input {
+  margin-right: 20px; }
+
+.class-selector {
+  margin-bottom: 15px;
+  width: 300px;
+  margin: 0 auto; }
+
+.slct {
+  border: 1px solid #d2d8d8;
+  padding: 5px 10px 5px 30px; }
+
+.cd-buttons {
+  margin: 20px 40px;
+  text-align: center;
+  list-style: none; }
+  .cd-buttons:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .cd-buttons li {
+    float: left;
+    width: 50%; }
+  .cd-buttons a {
+    text-decoration: none;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #FFF;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s; }
+  .cd-buttons li:first-child a {
+    background: #fc7169; }
+    .no-touch .cd-buttons li:first-child a:hover {
+      background-color: #fc8982; }
+  .cd-buttons li:last-child a {
+    background: #b6bece; }
+    .no-touch .cd-buttons li:last-child a:hover {
+      background-color: #c5ccd8; }
 
 /*# sourceMappingURL=main.css.map */

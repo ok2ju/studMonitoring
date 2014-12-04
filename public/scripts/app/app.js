@@ -10,6 +10,10 @@ angular.module('smAngular', ['ngResource', 'ngRoute']).config(['$routeProvider' 
       templateUrl: '/views/student-profile.html',
       controller: 'StudentProfileCtrl'
     }).
+    when('/studentForm', {
+      templateUrl: '/views/student-form.html',
+      controller: 'StudentFormCtrl'
+    }).
     otherwise({
       redirectTo: '/phones'
     });
