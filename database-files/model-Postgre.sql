@@ -1,12 +1,4 @@
-create table Address 
-(
-	id_address integer PRIMARY KEY,
-	street text,
-	city text default 'Гродно',
-	state text default 'Беларусь'
-);
-
-create table Subject 
+create table Subject
 (
 	id_subject integer PRIMARY KEY,
 	title text
@@ -28,6 +20,8 @@ create table Person
 	surname text,
 	gender text
 	check (gender in('M', 'F')),
+	login text,
+	password text,
 	street text,
     city text default 'Гродно',
     state text default 'Беларусь'
@@ -38,18 +32,14 @@ create table Student
 	id_student SERIAL PRIMARY KEY,
 	dateEnrollment date,
 	id_elder integer,
-	id_address integer,
 	id_class integer not null,
-	constraint FK_STUDENT_ADDRESS foreign key (id_address) references Address (id_address),
 	constraint FK_STUDENT_STUDENT foreign key (id_elder) references Student (id_student),
 	constraint FK_STUDENT_CLASS foreign key (id_class) references Class (id_class)
 ) INHERITS (Person);
 
 create table Teacher
 (
-	id_teacher integer PRIMARY KEY,
-	id_address integer,
-	constraint FK_TEACHER_ADDRESS foreign key (id_address) references Address (id_address)
+	id_teacher integer PRIMARY KEY
 ) INHERITS (Person);
 
 create table Truancy 

@@ -4,6 +4,7 @@
             <th>Name, Surname</th>
             <th>Class</th>
             <th>Date Enroll</th>
+            <th>Address</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
             <td><a href="/#/students/{{student.id_student}}">{{student.name}} {{student.surname}}</a></td>
             <td>{{student.class_number}}{{student.class_character}}</td>
             <td>{{student.dateenrollment | date}}</td>
+            <td>{{student.state}}, {{student.city}}, {{student.street}}</td>
         </tr>
     </tbody>
 </table>

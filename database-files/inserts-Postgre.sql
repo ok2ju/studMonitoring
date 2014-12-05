@@ -1,9 +1,3 @@
-/* ----------- Address ---------------- */
-insert into Address(id_address, street) values(1,'Lenina');
-insert into Address(id_address, street) values(2,'Schorsa');
-insert into Address(id_address, street) values(3,'Himikov');
-insert into Address(id_address, street) values(4,'Taulaya');
-insert into Address(id_address, street) values(5,'Kosmonautov');
 
 /* ----------- Subjects ------------------- */
 insert into Subject values(1, 'Математика');
@@ -24,12 +18,12 @@ insert into Class values(9, 10, 'Б');
 insert into Class values(10, 11, 'Б');
 
 /* ------------ Students -------------------- */
-insert into Student(id_student, name, surname, gender, dateEnrollment, id_elder, id_address, id_class) values(1, 'Dima', 'Petrov', 'M', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 1, 1);
+insert into Student(id_student, name, surname, login, password, gender, dateEnrollment, id_elder, id_class, street) values(1, 'Dima', 'Petrov', 'login1', 'pass1', 'M', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 1, 'Кленовая');
 
-insert into Student(id_student, name, surname, gender, dateEnrollment, id_elder, id_address, id_class) values(2, 'Petya', 'Kartoshkin', 'M', TO_DATE('1994-01-04', 'yyyy-mm-dd'), 1, 2, 4);
+insert into Student(id_student, name, surname, login, password, gender, dateEnrollment, id_elder, id_class, street) values(2, 'Petya', 'Kartoshkin', 'login1', 'pass1', 'M', TO_DATE('1994-01-04', 'yyyy-mm-dd'), 1, 4, 'Щорса');
 
 /* ----------- Teacher ---------------- */
-insert into Teacher(id_teacher, name, surname, gender, id_address) values(1, 'Alexander', 'Pavlov', 'M', 2);
+insert into Teacher(id_teacher, name, surname, gender) values(1, 'Alexander', 'Pavlov', 'M');
 
 /* ----------- Marks ------------------- */
 insert into Marks values(1, 10, 1, 1, 1);

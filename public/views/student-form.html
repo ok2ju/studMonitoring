@@ -25,6 +25,13 @@
             <option ng-repeat="klass in klasses" value="{{klass.id_class}}">{{klass.class_number}}{{klass.class_character}}</option>
         </select>
     </div>
+    <fieldset>
+        <input ng-model="student.state" class="form-input floated-input left-side-input" type="text" placeholder="State">
+        <input ng-model="student.city" class="form-input floated-input" type="text" placeholder="City">
+    </fieldset>
+    <fieldset>
+        <input ng-model="student.street" class="form-input" type="text" placeholder="Street">
+    </fieldset>
     <ul class="cd-buttons">
         <li><a ng-click="submit()">Create</a>
         </li>

@@ -6,7 +6,7 @@ var pg = require('../utils/pgwrapper.js');
 var student = {};
 
 student.list = function(callback) {
-  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, '+
+  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, s.state, s.street, s.city, '+
     'class_number, class_character '+
     'from Student s, Class '+
     'where s.id_class = Class.id_class;';
@@ -27,10 +27,10 @@ student.classlist = function(klass, callback) {
 
 student.save = function(student, callback) {
   var s = student;
-  var sql = "insert into Student(name, surname, gender, dateEnrollment, id_elder, id_address, id_class) " +
-    "values($1, $2, $3, TO_DATE($4, 'yyyy-mm-dd'), $5, $6, $7);";
+  var sql = "insert into Student(name, surname, gender, dateEnrollment, id_elder, id_class, state, city, street) " +
+    "values($1, $2, $3, TO_DATE($4, 'yyyy-mm-dd'), $5, $6, $7, $8, $9);";
 
-  pg.executeSql(sql, [s.name, s.surname, s.gender, s.dateEnrollment, s.idElder, s.idAddress, s.idClass], callback);
+  pg.executeSql(sql, [s.name, s.surname, s.gender, s.dateEnrollment, s.idElder, s.idClass, s.state, s.city, s.street], callback);
 };
 
 student.find = function(id, callback) {
