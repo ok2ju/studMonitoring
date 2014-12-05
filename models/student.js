@@ -44,4 +44,39 @@ student.save = function(student, callback) {
   pg.executeSql(sql, [s.name, s.surname, s.gender, s.dateEnrollment, s.idElder, s.idAddress, s.idClass], callback);
 };
 
+student.save = function(student, callback) {
+  var sql = "insert into Student(name, surname, gender, dateEnrollment, id_elder, id_address, id_class) " +
+    "values($1, $2, $3, TO_DATE($4, 'yyyy-mm-dd'), $5, $6, $7);";
+  pg.withConnection(function(err, client, done) {
+    if(err) {
+      return callback(err);
+    }
+    selectClassId(client, student.classNumber, student.classChar, function(err, classId) {
+      if(err) {
+        return callback(err);
+      }
+      var s = student;
+      s.idClass = classId;
+      s.idAddress = 1;
+      s.idElder = 1;
+      client.query(sql, [s.name, s.surname, s.gender, s.dateEnrollment, s.idElder, s.idAddress, s.idClass], callback);
+    });
+  });
+};
+
+function selectClassId(client, classNumber, classChar, callback) {
+  var selectClassIdSql = "select id_class from Class " +
+    "where class_number = $1 and " +
+    "class_character = $2;";
+
+  client.query(selectClassIdSql, [classNumber, classChar], function(err, result) {
+    if(err) {
+      return callback(err);
+    }
+    var idClass = result.rows[0].id_class;
+    callback(err, idClass);
+  });
+}
+
+
 module.exports = student;

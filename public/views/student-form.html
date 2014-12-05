@@ -1,34 +1,34 @@
-<form action="" class="student-form">
+<form class="student-form">
     <fieldset>
-        <input class="form-input floated-input left-side-input" type="text" placeholder="Name">
-        <input class="form-input floated-input" type="text" placeholder="Surname">
+        <input ng-model="student.name" class="form-input floated-input left-side-input" type="text" placeholder="Name">
+        <input ng-model="student.surname" class="form-input floated-input" type="text" placeholder="Surname">
     </fieldset>
     <fieldset>
         <input class="form-input" type="date">
     </fieldset>
     <fieldset>
-        <input type="radio" name="group1" value="Milk" checked> Male
-        <input type="radio" name="group1" value="Butter"> Female
+        <input type="radio" ng-model="student.gender" value="M" checked> Male
+        <input type="radio" ng-model="student.gender" value="F"> Female
     </fieldset>
     <fieldset>
-        <input class="form-input floated-input left-side-input" type="text" placeholder="State">
-        <input class="form-input floated-input" type="text" placeholder="City">
+        <input ng-model="student.state" class="form-input floated-input left-side-input" type="text" placeholder="State">
+        <input ng-model="student.city" class="form-input floated-input" type="text" placeholder="City">
     </fieldset>
     <fieldset>
-        <input class="form-input" type="text" placeholder="Street">
+        <input ng-model="student.street" class="form-input" type="text" placeholder="Street">
     </fieldset>
     <fieldset>
-        <input class="form-input" type="text" placeholder="Login">
+        <input ng-model="student.login" class="form-input" type="text" placeholder="Login">
     </fieldset>
     <fieldset>
-        <input class="form-input" type="text" placeholder="Password">
+        <input ng-model="student.password" class="form-input" type="text" placeholder="Password">
     </fieldset>
     <fieldset>
         <input class="form-input" type="date">
     </fieldset>
     <div class="class-selector">
         <label for="">Class:</label>
-        <select class="slct" name="class-number" id="classNumber">
+        <select ng-model="student.classNumber" class="slct" name="class-number" id="classNumber">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -41,7 +41,7 @@
             <option value="10">10</option>
             <option value="11">11</option>
         </select>
-        <select class="slct" name="class-char" id="classChar">
+        <select ng-model="student.classChar"class="slct" name="class-char" id="classChar">
             <option value="А">А</option>
             <option value="Б">Б</option>
             <option value="В">В</option>
@@ -50,9 +50,9 @@
         </select>
     </div>
     <ul class="cd-buttons">
-        <li><a href="#0">Create</a>
+        <li><a ng-click="submit()">Create</a>
         </li>
-        <li><a href="#0">Cancel</a>
+        <li><a href="#">Cancel</a>
         </li>
     </ul>
 </form>

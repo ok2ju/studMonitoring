@@ -5,8 +5,25 @@
 var pg = require('pg'),
   conString = 'pg://postgres:admin@localhost:5432/study';
 
+
+module.exports.withConnection = function withConnection(callback) {
+  var conf = {
+    user:"postgres",
+    password:"admin",
+    host:"localhost",
+    database:"study"
+  };
+
+  pg.connect(conf, function(err, client, done) {
+    if(err) {
+      console.error('error fetching client from pool', err);
+    }
+    callback(err, client, done);
+  });
+};
+
 module.exports.executeSql =  function executeSql(sql, values, callback) {
-  withConnection(function(err, client, done) {
+  module.exports.withConnection(function(err, client, done) {
     if(typeof values === 'function') {
       callback = values;
     }
@@ -33,19 +50,3 @@ module.exports.executeSql =  function executeSql(sql, values, callback) {
     }
   });
 };
-
-function withConnection(callback) {
-  var conf = {
-    user:"postgres",
-    password:"admin",
-    host:"localhost",
-    database:"study"
-  };
-
-  pg.connect(conf, function(err, client, done) {
-    if(err) {
-      console.error('error fetching client from pool', err);
-    }
-    callback(err, client, done);
-  });
-}
