@@ -27,7 +27,10 @@ create table Person
 	name text,
 	surname text,
 	gender text
-	check (gender in('M', 'F'))
+	check (gender in('M', 'F')),
+	street text,
+    city text default 'Гродно',
+    state text default 'Беларусь'
 );
 
 create table Student

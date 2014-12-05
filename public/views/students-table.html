@@ -4,15 +4,13 @@
             <th>Name, Surname</th>
             <th>Class</th>
             <th>Date Enroll</th>
-            <th>Gender</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="student in students">
             <td><a href="/#/students/{{student.id_student}}">{{student.name}} {{student.surname}}</a></td>
             <td>{{student.class_number}}{{student.class_character}}</td>
-            <td>{{student.dateenrollment}}</td>
-            <td>{{student.gender}}</td>
+            <td>{{student.dateenrollment | date}}</td>
         </tr>
     </tbody>
 </table>

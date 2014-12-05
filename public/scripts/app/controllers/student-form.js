@@ -1,6 +1,7 @@
-angular.module('smAngular').controller('StudentFormCtrl', ['$scope', 'Students', function($scope, Students) {
+angular.module('smAngular').controller('StudentFormCtrl', ['$scope', 'Students', 'Klass', function($scope, Students, Klass) {
 
   $scope.student = {};
+  $scope.klasses = Klass.query();
 
   $scope.submit = function() {
     console.log($scope.student);

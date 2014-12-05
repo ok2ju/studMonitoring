@@ -15,6 +15,6 @@ angular.module('smAngular', ['ngResource', 'ngRoute']).config(['$routeProvider' 
       controller: 'StudentFormCtrl'
     }).
     otherwise({
-      redirectTo: '/phones'
+      redirectTo: '/students'
     });
 }]);

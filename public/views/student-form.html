@@ -4,18 +4,11 @@
         <input ng-model="student.surname" class="form-input floated-input" type="text" placeholder="Surname">
     </fieldset>
     <fieldset>
-        <input class="form-input" type="date">
+        <input ng-model="dob" class="form-input" type="date">
     </fieldset>
     <fieldset>
         <input type="radio" ng-model="student.gender" value="M" checked> Male
         <input type="radio" ng-model="student.gender" value="F"> Female
-    </fieldset>
-    <fieldset>
-        <input ng-model="student.state" class="form-input floated-input left-side-input" type="text" placeholder="State">
-        <input ng-model="student.city" class="form-input floated-input" type="text" placeholder="City">
-    </fieldset>
-    <fieldset>
-        <input ng-model="student.street" class="form-input" type="text" placeholder="Street">
     </fieldset>
     <fieldset>
         <input ng-model="student.login" class="form-input" type="text" placeholder="Login">
@@ -24,29 +17,12 @@
         <input ng-model="student.password" class="form-input" type="text" placeholder="Password">
     </fieldset>
     <fieldset>
-        <input class="form-input" type="date">
+        <input ng-model="student.dateEnrollment" class="form-input" type="date">
     </fieldset>
     <div class="class-selector">
         <label for="">Class:</label>
-        <select ng-model="student.classNumber" class="slct" name="class-number" id="classNumber">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-        </select>
-        <select ng-model="student.classChar"class="slct" name="class-char" id="classChar">
-            <option value="А">А</option>
-            <option value="Б">Б</option>
-            <option value="В">В</option>
-            <option value="Г">Г</option>
-            <option value="Д">Д</option>
+        <select ng-model="student.idClass" class="slct" name="class-number" id="classNumber">
+            <option ng-repeat="klass in klasses" value="{{klass.id_class}}">{{klass.class_number}}{{klass.class_character}}</option>
         </select>
     </div>
     <ul class="cd-buttons">
