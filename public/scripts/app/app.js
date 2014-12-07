@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('smAngular', ['ngResource', 'ngRoute']).config(['$routeProvider' ,function($routeProvider) {
+angular.module('smAngular', ['ngResource', 'ngRoute']).config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/', {
       templateUrl: '/views/login.html',
@@ -19,11 +19,11 @@ angular.module('smAngular', ['ngResource', 'ngRoute']).config(['$routeProvider' 
       controller: 'StudentFormCtrl'
     }).
     when('/admin', {
-      templateUrl: '/views/admin.html',
+      templateUrl: '/views/student-table-page.html',
       controller: 'AdminCtrl'
     }).
     when('/user', {
-      templateUrl: '/views/user.html',
+      templateUrl: '/views/student-profile-page.html',
       controller: 'UserCtrl'
     }).
     otherwise({

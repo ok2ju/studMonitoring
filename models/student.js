@@ -36,7 +36,7 @@ student.save = function(student, callback) {
 student.find = function(id, callback) {
   var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, gender, '+
     'class_number, class_character '+
-    'from Student s, Address, Class '+
+    'from Student s, Class '+
     'where s.id_class = Class.id_class and s.id_student = $1;';
 
   pg.executeSql(sql, [id], callback);

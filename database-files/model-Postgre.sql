@@ -86,33 +86,15 @@ create table Classroom
 	building text
 );
 
-create table WeekDay 
-(
-	id_day integer PRIMARY KEY
-	constraint DAY_WEEKDAY_CONSTRAINT check (id_day between 1 and 7),
-	day_name text
-	constraint DAYNAME_WEEKDAY_CONSTRAINT check (day_name in ('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'))
-);
-
-create table LessonTime 
-(
-	lesson_number integer PRIMARY KEY,
-	start_lesson text,
-	end_lesson text
-);
-
 create table Schedule 
 (
 	id_classroom integer,
-	id_day integer,
-	lesson_number integer,
 	id_subject integer,
 	id_class integer,
 	id_teacher integer,
+
 	constraint FK_SCHEDULE_SUBJECT foreign key (id_subject) references Subject (id_subject),
 	constraint FK_SCHEDULE_CLASSROOM foreign key (id_classroom) references Classroom (id_classroom),
-	constraint FK_SCHEDULE_LESSONTIME foreign key (lesson_number) references LessonTime (lesson_number),
 	constraint FK_SCHEDULE_CLASS foreign key (id_class) references Class (id_class),
-	constraint FK_SCHEDULE_WEEKDAY foreign key (id_day) references WeekDay (id_day),
 	constraint FK_SCHEDULE_TEACHER foreign key (id_teacher) references Teacher (id_teacher)
 );
