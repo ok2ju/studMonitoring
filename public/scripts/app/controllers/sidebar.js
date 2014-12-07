@@ -5,7 +5,7 @@
 
 angular.module('smAngular').controller('SidebarCtrl', ['$scope', function($scope) {
 
-  $scope.roles = ['admin', 'student', 'teacher'];
-  $scope.selection = $scope.roles[0];
+  //$scope.roles = ['admin', 'student', 'teacher'];
+  //$scope.selection = $scope.roles[0];
 
 }]);

@@ -3,24 +3,9 @@
 @import "public/styles/variables";
 @import "public/styles/mixins"; 
 
-*{margin: 0; padding: 0;}
-
-html * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-	@include box-sizing(border-box);
-}
-
-body {
-	font: {
-		size: 100%;
-		family: $primary-font1;
-	}
-	color: $main-text;
+.login-bg-color {
 	background-color: $main-login-color;
+	height: 100%;
 }
 
 .login-wrapper {

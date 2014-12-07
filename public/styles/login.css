@@ -12,24 +12,9 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
-* {
-  margin: 0;
-  padding: 0; }
-
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
-  font-size: 100%;
-  font-family: "Roboto", sans-serif;
-  color: #4e6361;
-  background-color: #9bd8f1; }
+.login-bg-color {
+  background-color: #9bd8f1;
+  height: 100%; }
 
 .login-wrapper {
   position: absolute;

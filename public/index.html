@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/login.css">
 
 	<script src="scripts/libs/angular/angular.js"></script>
 	<script src="scripts/libs/angular/angular-resource.js"></script>
@@ -22,6 +23,9 @@
 	<script src="scripts/app/controllers/student-table.js"></script>
 	<script src="scripts/app/controllers/sidebar.js"></script>
 	<script src="scripts/app/controllers/student-form.js"></script>
+	<script src="scripts/app/controllers/admin.js"></script>
+	<script src="scripts/app/controllers/user.js"></script>
+	<script src="scripts/app/controllers/student-sidebar.js"></script>
 
 	<script src="scripts/app/directives/top-menu.js"></script>
 	<script src="scripts/app/directives/content.js"></script>
@@ -31,10 +35,14 @@
 	<script src="scripts/app/directives/sidebar.js"></script>
 	<script src="scripts/app/directives/admin-sidebar.js"></script>
 	<script src="scripts/app/directives/student-sidebar.js"></script>
+	<script src="scripts/app/directives/student-profile.js"></script>
 
 </head>
 <body>
+	<div class="wrapper" ng-view=""></div>
+	<!--
 	<top-menu class="navigation"></top-menu>
 	<section class="main-content-wrapper" ng-view=""></section>
+	-->
 </body>
 </html>

@@ -5,5 +5,5 @@ angular.module('smAngular').directive('studentSidebar', function() {
 		restrict: 'E',
 		templateUrl: 'views/student-sidebar.html',
 		controller: 'StudentSidebarCtrl'
-	}
+	};
 });
