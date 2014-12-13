@@ -1,16 +1,7 @@
-/* Neat 1.7.0
- * http://neat.bourbon.io
- * Copyright 2012-2014 thoughtbot, inc.
- * MIT License */
-html {
+* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit; }
 
 * {
   margin: 0;
@@ -231,6 +222,10 @@ body {
     @media screen and (min-width: 769px) {
       .content .accordion-tabs-minimal a.tab-link {
         display: inline-block;
+        vertical-align: baseline;
+        zoom: 1;
+        *display: inline;
+        *vertical-align: auto;
         border-top: 0; } }
     .content .accordion-tabs-minimal a.tab-link:hover {
       color: #000; }
