@@ -18,4 +18,3 @@ define(['./module'], function(module) {
 	});
 
 });
-

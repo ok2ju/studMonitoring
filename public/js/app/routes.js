@@ -28,6 +28,10 @@ define(['./app'], function(app) {
         templateUrl: '/views/profile-page.html',
         controller: 'UserCtrl'
       }).
+      when('/schedule', {
+        templateUrl: '/js/app/templates/schedule-table-page/view/student-table-page.html',
+        controller: 'ScheduleTablePageCtrl'
+      }).
       otherwise({
         redirectTo: '/students'
       });

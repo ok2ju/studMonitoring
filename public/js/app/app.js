@@ -8,7 +8,9 @@ define([
   './components/student/index',
   './components/top-menu/index',
   './components/sidebar/index',
-  './templates/student-table-page/index'
+  './components/schedule/index',
+  './templates/student-table-page/index',
+  './templates/schedule-table-page/index'
 ], function (angular) {
   return angular.module('smAngular', [
     'ngResource',
@@ -17,6 +19,8 @@ define([
     'smAngular.components.sidebar',
     'smAngular.components.top-menu',
     'smAngular.components.student',
-    'smAngular.templates.student-table-page'
+    'smAngular.components.schedule',
+    'smAngular.templates.student-table-page',
+    'smAngular.templates.schedule-table-page'
   ]);
 });

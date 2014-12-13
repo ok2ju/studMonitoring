@@ -154,19 +154,24 @@ body {
 		background-color: $side-bars-color;
 	}
 
-	table th:first-child {
-		text-align: left;
-		padding-left:20px;
+	table thead tr th:last-child {
+		border-right: 1px solid #e0e0e0;
+	}
+
+	table thead tr th:first-child {
+		border-left: 1px solid #e0e0e0;
+	}
+
+	table tr td {
+		text-align: center;
+	}
+
+	table tr td:last-child {
+		border-right: 1px solid #e0e0e0;
 	}
 
 	table tr {
 		text-align: center;
-	}
-
-	table td:first-child {
-		text-align: left;
-		padding-left:20px;
-		border-left: 0;
 	}
 
 	table td {
@@ -179,10 +184,6 @@ body {
 
 	table tr:last-child td {
 		/*border-bottom:0;*/
-	}
-
-	table tr:hover td {
-		background: $side-bars-color;
 	}
 }
 
@@ -424,11 +425,30 @@ body {
 	.class-selector {
 		margin-bottom: 15px;
 	}
+}
 
-	.slct {
-		border: 1px solid #d2d8d8;
-		padding: 5px 10px 5px 30px;
-	}
+.slct {
+	border: 1px solid #d2d8d8;
+	padding: 5px 10px 5px 30px;
+}
+
+.filter {
+	margin-bottom: 20px;
+}
+
+.filter-input {
+	border: 1px solid #d2d8d8;
+	padding: 6px 10px 6px 30px;
+}
+
+.cs-input {
+	width: 100%;
+	padding: 6px 0 6px 0;
+}
+
+.cs-select {
+	width: 100%;
+	padding: 5px 0 5px 0;
 }
 
 .cd-switcher {

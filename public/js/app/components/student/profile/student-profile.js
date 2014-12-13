@@ -21,4 +21,3 @@ define(['../module', '../student-service'], function(module) {
       };
     });
 });
-

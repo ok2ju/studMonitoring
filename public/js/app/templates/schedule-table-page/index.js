@@ -1,0 +1,1 @@
+define(['./schedule-table-page-ctrl'], function(){});

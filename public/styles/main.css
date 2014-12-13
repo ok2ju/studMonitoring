@@ -130,15 +130,16 @@ body {
     border-top: 1px solid #e0e0e0; }
   .main-content-wrapper table thead tr {
     background-color: #f5f5f5; }
-  .main-content-wrapper table th:first-child {
-    text-align: left;
-    padding-left: 20px; }
+  .main-content-wrapper table thead tr th:last-child {
+    border-right: 1px solid #e0e0e0; }
+  .main-content-wrapper table thead tr th:first-child {
+    border-left: 1px solid #e0e0e0; }
+  .main-content-wrapper table tr td {
+    text-align: center; }
+  .main-content-wrapper table tr td:last-child {
+    border-right: 1px solid #e0e0e0; }
   .main-content-wrapper table tr {
     text-align: center; }
-  .main-content-wrapper table td:first-child {
-    text-align: left;
-    padding-left: 20px;
-    border-left: 0; }
   .main-content-wrapper table td {
     padding: 18px;
     border-bottom: 1px solid #e0e0e0;
@@ -146,8 +147,6 @@ body {
     /*background-color: $side-bars-color;*/ }
   .main-content-wrapper table tr:last-child td {
     /*border-bottom:0;*/ }
-  .main-content-wrapper table tr:hover td {
-    background: #f5f5f5; }
 
 /* -------------- User Profile styles ---------------------- */
 .content .user-info-wrapper {
@@ -353,9 +352,25 @@ body {
     margin-right: 20px; }
   .cd-popup-container .class-selector {
     margin-bottom: 15px; }
-  .cd-popup-container .slct {
-    border: 1px solid #d2d8d8;
-    padding: 5px 10px 5px 30px; }
+
+.slct {
+  border: 1px solid #d2d8d8;
+  padding: 5px 10px 5px 30px; }
+
+.filter {
+  margin-bottom: 20px; }
+
+.filter-input {
+  border: 1px solid #d2d8d8;
+  padding: 6px 10px 6px 30px; }
+
+.cs-input {
+  width: 100%;
+  padding: 6px 0 6px 0; }
+
+.cs-select {
+  width: 100%;
+  padding: 5px 0 5px 0; }
 
 .cd-switcher {
   list-style: none; }
