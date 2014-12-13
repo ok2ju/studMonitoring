@@ -24,7 +24,9 @@ create table Person
 	password text,
 	street text,
     city text default 'Гродно',
-    state text default 'Беларусь'
+    state text default 'Беларусь',
+    role text
+    check (role in('admin', 'student', 'teacher'))
 );
 
 create table Student
