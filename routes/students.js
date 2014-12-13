@@ -7,7 +7,7 @@ var express = require('express'),
 
 router.get('/', function(request, responce) {
   student.list(function(err, result) {
-    responceWrapper(err, result, result.rows);
+    responceWrapper(err, result.rows, responce);
   });
 });
 
@@ -15,14 +15,14 @@ router.get('/:id', function(request, responce) {
   var id = request.params.id;
   console.log("StudentRouter - get id = " + id);
   student.find(id, function(err, result) {
-    responceWrapper(err, result, result.rows[0]);
+    responceWrapper(err, result.rows[0], responce);
   });
 });
 
 router.get('/:klass', function(request, responce) {
   var klass = request.params.klass;
   student.classlist(klass, function(err, result) {
-    responceWrapper(err, result, responce.rows);
+    responceWrapper(err, result.rows, responce);
   });
 });
 
