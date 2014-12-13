@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="student in students">
-            <td><a href="/#/students/{{student.id_student}}">{{student.name}} {{student.surname}}</a></td>
+            <td><a href="/#/students/{{student.id}}">{{student.name}} {{student.surname}}</a></td>
             <td>{{student.class_number}}{{student.class_character}}</td>
             <td>{{student.dateenrollment | date}}</td>
             <td>{{student.state}}, {{student.city}}, {{student.street}}</td>

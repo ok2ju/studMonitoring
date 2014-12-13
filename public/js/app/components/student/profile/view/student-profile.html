@@ -7,7 +7,9 @@
             <ul class="details">
                 <li>
                     <span class="dob-label label">Date of birth:</span>
-                    <time class="dob-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">{{student.dateenrollment}}</time>
+                    <time class="dob-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">
+                        {{student.dateenrollment | date}}
+                    </time>
                 </li>
                 <li>
                     <span class="address-label label">Address:</span>
@@ -19,7 +21,9 @@
                 </li>
                 <li>
                     <span class="join-label label">Joined on:</span>
-                    <time class="join-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title=""> {{student.dateenrollment}}</time>
+                    <time class="join-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">
+                        {{student.dateenrollment | date}}
+                    </time>
                 </li>
                 <li>
                     <span class="login-label label">login:</span>

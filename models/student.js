@@ -6,10 +6,10 @@ var pg = require('../utils/pgwrapper.js');
 var student = {};
 
 student.list = function(callback) {
-  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, s.state, s.street, s.city, '+
+  var sql = 'select s.id, s.name, s.surname, dateEnrollment, s.state, s.street, s.city, '+
     'class_number, class_character '+
     'from Student s, Class '+
-    'where s.id_class = Class.id_class;';
+    'where s.id_class = Class.id;';
 
   pg.executeSql(sql, callback);
 };
@@ -19,7 +19,7 @@ student.classlist = function(klass, callback) {
   var sql = "select s.name, s.surname, dateEnrollment, " +
     "class_number, class_character " +
     "from Student s, Class " +
-    "where s.id_class = Class.id_class and Class.class_number = 7 and "+
+    "where s.id_class = Class.id and Class.class_number = 7 and "+
     "Class.class_character = $1;";
 
   pg.executeSql(sql, [klass], callback);
@@ -34,10 +34,10 @@ student.save = function(student, callback) {
 };
 
 student.find = function(id, callback) {
-  var sql = 'select s.id_student, s.name, s.surname, dateEnrollment, gender, '+
-    'class_number, class_character '+
+  var sql = 'select s.id, s.name, s.surname, dateEnrollment, gender, '+
+    'class_number, class_character, state, city, street '+
     'from Student s, Class '+
-    'where s.id_class = Class.id_class and s.id_student = $1;';
+    'where s.id_class = Class.id and s.id = $1;';
 
   pg.executeSql(sql, [id], callback);
 };
