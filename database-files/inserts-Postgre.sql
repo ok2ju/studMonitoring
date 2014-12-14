@@ -18,9 +18,9 @@ insert into Class values(9, 10, 'Б');
 insert into Class values(10, 11, 'Б');
 
 /* ------------ Students -------------------- */
-insert into Student(id, name, surname, login, password, gender, dateEnrollment, id_elder, id_class, street) values(1, 'Dima', 'Petrov', 'login1', 'pass1', 'M', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 1, 'Кленовая');
+insert into Student(id, name, surname, username, password, gender, dateEnrollment, id_elder, id_class, street, role) values(1, 'Dima', 'Petrov', 'dima', 'dima', 'M', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 1, 'Кленовая', 'student');
 
-insert into Student(id, name, surname, login, password, gender, dateEnrollment, id_elder, id_class, street) values(2, 'Petya', 'Kartoshkin', 'login1', 'pass1', 'M', TO_DATE('1994-01-04', 'yyyy-mm-dd'), 1, 4, 'Щорса');
+insert into Student(id, name, surname, username, password, gender, dateEnrollment, id_elder, id_class, street, role) values(2, 'Petya', 'Kartoshkin', 'login1', 'pass1', 'M', TO_DATE('1994-01-04', 'yyyy-mm-dd'), 1, 4, 'Щорса', 'student');
 
 /* ----------- Teacher ---------------- */
 insert into Teacher(id, name, surname, gender) values(1, 'Alexander', 'Pavlov', 'M');

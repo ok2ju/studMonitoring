@@ -29,8 +29,11 @@ define(['./app'], function(app) {
         controller: 'UserCtrl'
       }).
       when('/schedule', {
-        templateUrl: '/js/app/templates/schedule-table-page/view/student-table-page.html',
+        templateUrl: '/js/app/templates/schedule-table-page/view/schedule-table-page.html',
         controller: 'ScheduleTablePageCtrl'
+      }).
+      when('/scheduleForm', {
+        templateUrl: '/js/app/templates/schedule-form-page/view/schedule-form-page.html'
       }).
       otherwise({
         redirectTo: '/students'

@@ -16,11 +16,12 @@ create table Class
 
 create table Person
 (
+	id SERIAL PRIMARY KEY,
 	name text,
 	surname text,
 	gender text
 	check (gender in('M', 'F')),
-	login text,
+	username text,
 	password text,
 	street text,
     city text default 'Гродно',

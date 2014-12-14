@@ -1,0 +1,43 @@
+<table cellspacing='0'>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Lesson</th>
+            <th>Teacher</th>
+            <th>Classroom</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="schedule in schedules">
+            <td>
+                <input ng-bind="schedule.week_day" class="filter-input cs-input" type="date">
+            </td>
+            <td>
+                <input ng-bind="schedule.time" class="filter-input cs-input" type="time">
+            </td>
+            <td>
+                <select ng-bind="schedule.id_subject" class="slct cs-select" name="">
+                    <option value="бд">лаб. Базы данных</option>
+                    <option value="сети">лаб. Сети</option>
+                </select>
+            </td>
+            <td>
+                <select ng-bind="schedule.id_teacher" class="slct cs-select" name="">
+                    <option value="рудикова">Рудикова Лада Владимировна</option>
+                    <option value="сети">Самосюк Андрей Александрович</option>
+                </select>
+            </td>
+            <td>
+                <select ng-bind="schedule.id_class" class="slct cs-select" name="">
+                    <option value="210">210</option>
+                    <option value="211">211</option>
+                </select>
+            </td>
+        </tr>
+
+        <button value="add" ng-click="addOne()">dsfasdf</button>
+
+    </tbody>
+</table>
