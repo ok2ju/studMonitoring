@@ -25,7 +25,7 @@ define([
         if(data.role === 'student') {
           changeLocation('/#/students/' + data.id);
         } else if(data.role === 'teacher') {
-          changeLocation('');
+          changeLocation('/#/students');
         } else if(data.role === 'admin') {
           changeLocation('/#/students');
         }

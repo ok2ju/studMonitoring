@@ -13,8 +13,25 @@ define(['./module'], function(module) {
       $scope.menu1 = {
         links : [
           {
-            title: "Профайл",
+            title: "Profile",
             href: "/#/students/"+user.id
+          },
+          {
+            title: "Schedule",
+            href: "/#/schedule"
+          }
+        ]
+      };
+    } else if(user.role === 'admin') {
+      $scope.menu1 = {
+        links : [
+          {
+            title: "Add student",
+            href: "/#/studentForm"
+          },
+          {
+            title: "Add schedule",
+            href: "/#/scheduleForm"
           }
         ]
       };
