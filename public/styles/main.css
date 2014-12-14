@@ -211,14 +211,18 @@ body {
     background-color: #f1c40f; }
 .content .sm-btn {
   padding: 0.7em 1em;
-  display: block;
+  display: inline-block;
   color: #fff;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
 .content .btn-primary {
   background-color: #1abc9c; }
+.content .btn-secondary {
+  background-color: #e03333;
+  width: 150px; }
 .content .addSchedule-btn {
-  width: 100px; }
+  width: 150px; }
 .content .accordion-tabs-minimal {
   margin-top: 40px;
   margin-bottom: 1.5em; }
