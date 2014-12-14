@@ -8,10 +8,10 @@ require.config({
     'domReady': '/node_modules/domready/ready.min',
     'angular': '/node_modules/angular/angular.min',
     'angular-route': '/node_modules/angular-route/angular-route.min',
-    'angular-resource': '/node_modules/angular-resource/angular-resource.min'
+    'angular-resource': '/node_modules/angular-resource/angular-resource.min',
+    'angular-cookies': '/node_modules/angular-cookies/angular-cookies.min'
   },
 
-  // angular не поддерживает AMD из коробки, поэтому экспортируем перменную angular в глобальную область
   shim: {
     'angular': {
       exports: 'angular'
@@ -21,9 +21,11 @@ require.config({
     },
     'angular-resource': {
       deps: ['angular']
+    },
+    'angular-cookies': {
+      deps: ['angular']
     }
   },
 
-  // запустить приложение
   deps: ['./bootstrap']
 });

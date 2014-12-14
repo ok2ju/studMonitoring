@@ -13,7 +13,7 @@ define(['./app'], function(app) {
         templateUrl: '/js/app/templates/student-table-page/view/student-table-page.html',
         controller: 'StudentTablePageCtrl'
       }).
-      when('/students/:studentId', {
+      when('/students/:id', {
         templateUrl: '/js/app/templates/student-profile-page/view/student-profile-page.html'
       }).
       when('/studentForm', {

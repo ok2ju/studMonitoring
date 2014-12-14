@@ -2,14 +2,14 @@
  * Created by alehatsman on 12/4/14.
  */
 
-define(['../module', '../student-service'], function(module) {
+define(['../module'], function(module) {
   'use strict';
 
   module.controller('StudentProfileCtrl',
     ['$scope', '$routeParams','Students', function($scope, $routeParams, Students) {
-      var studentId = $routeParams.studentId;
+      var studentId = $routeParams.id;
 
-      Students.get({studentId:studentId}, function(student) {
+      Students.get({id:studentId}, function(student) {
         $scope.student = student;
       });
 

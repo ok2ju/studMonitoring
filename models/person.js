@@ -3,12 +3,10 @@
  */
 var pg = require('../utils/pgwrapper.js');
 
-var person = {};
+module.exports = {
+  findByUsername : function(username, callback) {
+    var sql = "select id, username, role, password from person where username = $1 ;";
 
-person.findByUsername = function(username, callback) {
-  var sql = "select id, username, role, password from person where username = $1";
-
-  pg.executeSql(sql, [username], callback);
+    pg.executeSql(sql, [ username ], callback);
+  }
 };
-
-module.exports = person;

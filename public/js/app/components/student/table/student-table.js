@@ -1,4 +1,4 @@
-define(['../module', '../student-service'], function(module) {
+define(['../module'], function(module) {
 	'use strict';
 
 	module.controller('StudentsTableCtrl', [ '$scope', 'Students', function($scope, Students) {

@@ -4,6 +4,7 @@ define([
   'angular',
   'angular-route',
   'angular-resource',
+  'angular-cookies',
   './components/login/index',
   './components/student/index',
   './components/top-menu/index',
@@ -15,6 +16,7 @@ define([
   return angular.module('smAngular', [
     'ngResource',
     'ngRoute',
+    'ngCookies',
     'smAngular.components.login',
     'smAngular.components.sidebar',
     'smAngular.components.top-menu',

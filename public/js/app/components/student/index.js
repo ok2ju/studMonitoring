@@ -2,9 +2,8 @@
  * Created by alehatsman on 12/7/14.
  */
 define([
-  './student-service',
+  '../resources/index',
   './profile/student-profile',
   './table/student-table',
-  './form/student-form',
-  './klass-service'
+  './form/student-form'
 ], function() {});

@@ -7,7 +7,7 @@ define(['./module'], function(module) {
 
   module.factory('Klass', ['$resource',
     function($resource){
-      return $resource('/klass/:klassid');
+      return $resource('/api/klass/:id');
     }]);
 });
 

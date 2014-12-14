@@ -1,4 +1,5 @@
 define([
   './form/schedule-form',
-  './table/schedule-table'
+  './table/schedule-table',
+  '../resources/index'
 ], function() {});

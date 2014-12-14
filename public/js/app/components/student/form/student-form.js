@@ -1,4 +1,4 @@
-define(['../module', '../student-service', '../klass-service'], function(module) {
+define(['../module'], function(module) {
 
   module.controller('StudentFormCtrl', ['$scope', 'Students', 'Klass', function($scope, Students, Klass) {
 

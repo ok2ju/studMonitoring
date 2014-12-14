@@ -1,6 +1,6 @@
 /**
  * Created by alehatsman on 12/7/14.
  */
-define(['angular'], function(angular) {
+define(['angular', 'angular-cookies'], function(angular) {
   return angular.module('smAngular.components.login', []);
 });

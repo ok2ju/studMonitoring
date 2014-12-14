@@ -3,7 +3,8 @@ define([
 ], function(module) {
   'use strict';
 
-  module.controller('LoginCtrl', ['$scope', '$http', function($scope, $http, $location) {
+  module.controller('LoginCtrl', ['$scope', '$rootScope', '$http', '$cookieStore',
+    function($scope, $rootScope, $http, $cookieStore) {
 
     $scope.user = {
       username: '',
@@ -20,6 +21,7 @@ define([
         url: 'api/login',
         data: $scope.user
       }).success(function(data) {
+        $cookieStore.put('user', data);
         if(data.role === 'student') {
           changeLocation('/#/students/' + data.id);
         } else if(data.role === 'teacher') {

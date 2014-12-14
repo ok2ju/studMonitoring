@@ -5,7 +5,7 @@ var express = require('express'),
   router = express.Router(),
   auth = require('../services/auth');
 
-router.post('/api/login', function(req, res) {
+router.post('/login', function(req, res) {
   auth.authenticate(req.body.username, req.body.password, function(err, userDetails) {
     if(userDetails) {
       req.session.regenerate(function() {
@@ -27,7 +27,7 @@ router.post('/api/login', function(req, res) {
   });
 });
 
-router.get('/api/logout', function(req, res){
+router.get('/logout', function(req, res){
   // destroy the user's session to log them out
   // will be re-created next request
   req.session.destroy(function(){

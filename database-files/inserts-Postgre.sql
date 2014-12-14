@@ -23,7 +23,8 @@ insert into Student(id, name, surname, username, password, gender, dateEnrollmen
 insert into Student(id, name, surname, username, password, gender, dateEnrollment, id_elder, id_class, street, role) values(2, 'Petya', 'Kartoshkin', 'login1', 'pass1', 'M', TO_DATE('1994-01-04', 'yyyy-mm-dd'), 1, 4, 'Щорса', 'student');
 
 /* ----------- Teacher ---------------- */
-insert into Teacher(id, name, surname, gender) values(1, 'Alexander', 'Pavlov', 'M');
+insert into Teacher(id, name, surname, gender, login, password, role) values(1, 'Alexander', 'Pavlov', 'M', 'teacher', 'teacher', 'teacher');
+insert into Teacher(id, name, surname, gender, login, password, role) values(2, 'Лада', 'Рудикова', 'M', 'lada', 'lada', 'teacher');
 
 /* ----------- Marks ------------------- 
 insert into Marks values(1, 10, 1, 1, 1);

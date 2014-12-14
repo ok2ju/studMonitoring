@@ -4,10 +4,22 @@
 'use strict';
 
 define(['./module'], function(module) {
-  module.controller('SidebarCtrl', [ '$scope', function($scope) {
+  module.controller('SidebarCtrl', [ '$scope', '$rootScope', '$cookieStore',
+    function($scope, $rootScope, $cookieStore) {
 
-    //$scope.roles = ['admin', 'student', 'teacher'];
-    //$scope.selection = $scope.roles[0];
+  var user = $cookieStore.get('user');
+  if(user.role) {
+    if(user.role === 'student') {
+      $scope.menu1 = {
+        links : [
+          {
+            title: "Профайл",
+            href: "/#/students/"+user.id
+          }
+        ]
+      };
+    }
+  }
 
   }]).directive('sidebar', function() {
     return {
