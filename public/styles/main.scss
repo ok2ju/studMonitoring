@@ -250,6 +250,22 @@ body {
 		}
 	}
 
+	.sm-btn {
+		padding: 0.7em 1em;
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.btn-primary {
+		background-color: #1abc9c;
+	}
+
+	.addSchedule-btn {
+		width: 100px;
+	}
+
 	.accordion-tabs-minimal {
 
 	  @include clearfix;

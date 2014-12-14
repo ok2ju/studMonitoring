@@ -1,7 +1,16 @@
-* {
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
 
 * {
   margin: 0;
@@ -200,6 +209,16 @@ body {
     background-color: #1abc9c; }
   .content .user-info .btn-wrng {
     background-color: #f1c40f; }
+.content .sm-btn {
+  padding: 0.7em 1em;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer; }
+.content .btn-primary {
+  background-color: #1abc9c; }
+.content .addSchedule-btn {
+  width: 100px; }
 .content .accordion-tabs-minimal {
   margin-top: 40px;
   margin-bottom: 1.5em; }
