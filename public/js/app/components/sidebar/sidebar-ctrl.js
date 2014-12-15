@@ -32,6 +32,26 @@ define(['./module'], function(module) {
           {
             title: "Add schedule",
             href: "/#/scheduleForm"
+          },
+          {
+            title: "Edit schedule",
+            href: "/#/"
+          },
+          {
+            title: "Edit student",
+            href: "/#/"
+          },
+          {
+            title: "Edit teacher",
+            href: "/#/"
+          },
+          {
+            title: "Add marks",
+            href: "/#/"
+          },
+          {
+            title: "Add truancy",
+            href: "/#/"
           }
         ]
       };
