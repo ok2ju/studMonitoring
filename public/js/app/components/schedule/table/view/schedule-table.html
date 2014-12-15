@@ -10,6 +10,16 @@
     </thead>
     <tbody>
 
+        <tr ng-repeat="schedule in schedules">
+            <td rowspan="{{schedule.number_of_lessons}}" ng-if="$first || isStartDay($index)">
+                {{schedule.week_day | date}}
+            </td>
+            <td>{{schedule.week_day | date : "hh:mm"}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.surname}} {{schedule.name}}</td>
+            <td>{{schedule.classroom_number}}</td>
+        </tr>
+
         <tr>
             <td rowspan="3">Понедельник
                 <p>07/12/14</p>

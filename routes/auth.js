@@ -17,7 +17,9 @@ router.post('/login', function(req, res) {
         res.send({
           id: userDetails.id,
           username: userDetails.username,
-          role: userDetails.role
+          role: userDetails.role,
+          name: userDetails.name,
+          surname: userDetails.surname
         });
       });
     } else {
