@@ -150,7 +150,7 @@ body {
   .main-content-wrapper table tr {
     text-align: center; }
   .main-content-wrapper table td {
-    padding: 18px;
+    padding: 10px;
     border-bottom: 1px solid #e0e0e0;
     border-left: 1px solid #e0e0e0;
     /*background-color: $side-bars-color;*/ }
