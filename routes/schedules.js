@@ -15,4 +15,15 @@ router.post('/', function(req, res) {
   });
 });
 
+router.get('/class/:id', function(req, res) {
+  var id = req.params.id;
+  schedule.list(id, function(err, result) {
+    if(err) {
+      res.status(404);
+      return res.json(err);
+    }
+    res.json(result.rows);
+  });
+});
+
 module.exports = router;

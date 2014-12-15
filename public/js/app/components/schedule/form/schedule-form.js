@@ -1,8 +1,8 @@
 define(['../module'], function(module) {
   'use strict';
 
-  module.controller('ScheduleFormCtrl', ['$scope', 'Teachers', 'Subjects', 'Classrooms', 'Schedules',
-    function($scope, Teachers, Subjects, Classrooms, Schedules) {
+  module.controller('ScheduleFormCtrl', ['$scope', 'Teachers', 'Subjects', 'Classrooms', 'Schedules', 'Klass',
+    function($scope, Teachers, Subjects, Classrooms, Schedules, Klass) {
 
       var time = new Date();
       time.setHours(8);
@@ -21,6 +21,10 @@ define(['../module'], function(module) {
       });
 
       Classrooms.query(function(list) {
+        $scope.classrooms = list;
+      });
+
+      Klass.query(function(list) {
         $scope.klasses = list;
       });
 

@@ -6,6 +6,7 @@
             <th>Lesson</th>
             <th>Teacher</th>
             <th>Classroom</th>
+            <th>Class</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +25,10 @@
             <select ng-model="schedule.id_teacher" ng-options="teacher.id as teacher.name + ' ' + teacher.surname for teacher in teachers"></select>
         </td>
         <td>
-            <select ng-model="schedule.id_classroom" ng-options="klass.id as klass.classroom_number for klass in klasses"></select>
+            <select ng-model="schedule.id_classroom" ng-options="classroom.id as classroom.classroom_number for classroom in classrooms"></select>
+        </td>
+        <td>
+            <select ng-model="schedule.id_class" ng-options="klass.id as klass.class_number + ' ' + klass.class_character for klass in klasses"></select>
         </td>
     </tr>
 
