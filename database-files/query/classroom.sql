@@ -1,3 +1,3 @@
 create view classroomList as
-    select id, number, text
+    select id, number, building
     from classroom;

@@ -13,22 +13,22 @@
 
     <tr ng-repeat="schedule in schedules">
         <td>
-            <input ng-model="schedule.week_day" class="filter-input cs-input" type="date">
+            <input ng-model="schedule.weekDay" class="filter-input cs-input" type="date">
         </td>
         <td>
             <input type="time" min="08:00:00" ng-model="schedule.time" class="filter-input cs-input" placeholder="HH:mm:ss">
         </td>
         <td>
-            <select ng-model="schedule.id_subject" ng-options="subject.id as subject.title for subject in subjects"></select>
+            <select ng-model="schedule.subjectId" ng-options="subject.id as subject.title for subject in subjects"></select>
         </td>
         <td>
-            <select ng-model="schedule.id_teacher" ng-options="teacher.id as teacher.name + ' ' + teacher.surname for teacher in teachers"></select>
+            <select ng-model="schedule.teacherId" ng-options="teacher.id as teacher.name + ' ' + teacher.surname for teacher in teachers"></select>
         </td>
         <td>
-            <select ng-model="schedule.id_classroom" ng-options="classroom.id as classroom.classroom_number for classroom in classrooms"></select>
+            <select ng-model="schedule.classroomId" ng-options="classroom.id as classroom.number for classroom in classrooms"></select>
         </td>
         <td>
-            <select ng-model="schedule.id_class" ng-options="klass.id as klass.class_number + ' ' + klass.class_character for klass in klasses"></select>
+            <select ng-model="schedule.classId" ng-options="klass.id as klass.number + ' ' + klass.letter for klass in klasses"></select>
         </td>
     </tr>
 
