@@ -12,12 +12,12 @@
 
         <tr ng-repeat="schedule in schedules">
             <td rowspan="{{schedule.number_of_lessons}}" ng-if="$first || isStartDay($index)">
-                {{schedule.week_day | date}}
+                {{schedule.weekday | date}}
             </td>
-            <td>{{schedule.week_day | date : "hh:mm"}}</td>
+            <td>{{schedule.weekday | date : "hh:mm"}}</td>
             <td>{{schedule.title}}</td>
             <td>{{schedule.surname}} {{schedule.name}}</td>
-            <td>{{schedule.classroom_number}}</td>
+            <td>{{schedule.classroomnumber}}</td>
         </tr>
 
         <tr>

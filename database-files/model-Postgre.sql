@@ -1,26 +1,29 @@
 create table Subject
 (
 	id SERIAL PRIMARY KEY,
-	title text
-	constraint TITLE_SUBJECT_CONSTRAINT check (title in ('Математика', 'Информатика', 'Биология', 'История'))
+	title text UNIQUE
 );
 
 create table Class
 (
 	id SERIAL PRIMARY KEY,
-	class_number integer
-	constraint NUMBER_CLASS_CONSTRAINT check (class_number between 1 and 11),
-	class_character text
-	constraint CHARACTER_CLASS_CONSTRAINT check (class_character in ('А', 'Б', 'В', 'Г'))
+	number integer
+	constraint NUMBER_CLASS_CONSTRAINT check (number between 1 and 11),
+	letter text,
+  	CONSTRAINT class_number_letter_key UNIQUE (number, letter)
 );
 
 create table Person
 (
 	id SERIAL PRIMARY KEY,
-	name text,
-	surname text,
+	name text not null,
+	surname text not null,
+	middlename text not null,
 	gender text
 	check (gender in('M', 'F')),
+	dob timestamp not null,
+	phone text not null,
+	email text,
 	username text,
 	password text,
 	street text,
@@ -33,7 +36,6 @@ create table Person
 create table Student
 (
 	id SERIAL PRIMARY KEY,
-	dateEnrollment date,
 	id_elder integer,
 	id_class integer not null,
 	constraint FK_STUDENT_STUDENT foreign key (id_elder) references Student (id),
@@ -42,7 +44,9 @@ create table Student
 
 create table Teacher
 (
-	id SERIAL PRIMARY KEY
+	id SERIAL PRIMARY KEY,
+	category integer check(category between 0 and 14),
+	experience integer check(experience > 0)
 ) INHERITS (Person);
 
 create table Truancy
@@ -83,10 +87,8 @@ create table Teacher_Subject
 create table Classroom
 (
 	id serial PRIMARY KEY,
-	classroom_number integer
-	constraint NUMBER_CLASSROOM_CONSTRAINT check (classroom_number between 100 and 300),
-	floor integer
-	constraint FLOOR_CLASSROOM_CONSTRAINT check (floor between 1 and 3),
+	number integer
+	constraint NUMBER_CLASSROOM_CONSTRAINT check (number between 100 and 300),
 	building text
 );
 
@@ -96,7 +98,7 @@ create table Schedule
 	id_subject integer,
 	id_class integer,
 	id_teacher integer,
-	week_day timestamp,
+	week_day timestamp not null,
 
 	constraint FK_SCHEDULE_SUBJECT foreign key (id_subject) references Subject (id),
 	constraint FK_SCHEDULE_CLASSROOM foreign key (id_classroom) references Classroom (id),

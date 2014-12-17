@@ -3,16 +3,20 @@
         <tr>
             <th>Name, Surname</th>
             <th>Class</th>
-            <th>Date Enroll</th>
+            <th>DOB</th>
             <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="student in students">
-            <td><a href="/#/students/{{student.id}}">{{student.name}} {{student.surname}}</a></td>
-            <td>{{student.class_number}}{{student.class_character}}</td>
-            <td>{{student.dateenrollment | date}}</td>
+            <td><a href="/#/students/{{student.id}}">{{student.surname}} {{student.name}} {{student.middlename}}</a></td>
+            <td>{{student.classnumber}}{{student.classletter}}</td>
+            <td>{{student.dob | date}}</td>
             <td>{{student.state}}, {{student.city}}, {{student.street}}</td>
+            <td>{{student.phone}}</td>
+            <td>{{student.email}}</td>
         </tr>
     </tbody>
 </table>

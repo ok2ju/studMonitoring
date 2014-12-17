@@ -1,28 +1,39 @@
-<form class="student-form">
+<form name="studentForm" class="student-form">
     <fieldset>
-        <input ng-model="student.name" class="form-input floated-input left-side-input" type="text" placeholder="Name">
-        <input ng-model="student.surname" class="form-input floated-input" type="text" placeholder="Surname">
+        <input ng-model="student.surname" required class="form-input" type="text" placeholder="Surname">
+        <span class="error" ng-show="student.surname.$error.required">
+            Required!
+        </span>
     </fieldset>
     <fieldset>
-        <input ng-model="dob" class="form-input" type="date">
+        <input ng-model="student.name" required class="form-input" type="text" placeholder="Name">
+    </fieldset>
+    <fieldset>
+        <input ng-model="student.middlename" required class="form-input" type="text" placeholder="Middlename">
+    </fieldset>
+    <fieldset>
+        <input ng-model="student.dob" required class="form-input" type="date" placeholder="Dob">
     </fieldset>
     <fieldset>
         <input type="radio" ng-model="student.gender" value="M" checked> Male
         <input type="radio" ng-model="student.gender" value="F"> Female
     </fieldset>
     <fieldset>
-        <input ng-model="student.login" class="form-input" type="text" placeholder="Login">
+        <input ng-model="student.phone" required class="form-input" type="text" placeholder="Phone number">
     </fieldset>
     <fieldset>
-        <input ng-model="student.password" class="form-input" type="text" placeholder="Password">
+        <input ng-model="student.email" class="form-input" type="email" placeholder="Email">
     </fieldset>
     <fieldset>
-        <input ng-model="student.dateEnrollment" class="form-input" type="date">
+        <input ng-model="student.username" required class="form-input" type="text" placeholder="Login">
+    </fieldset>
+    <fieldset>
+        <input ng-model="student.password" required class="form-input" type="text" placeholder="Password">
     </fieldset>
     <div class="class-selector">
         <label for="">Class:</label>
-        <select ng-model="student.idClass" class="slct" name="class-number" id="classNumber">
-            <option ng-repeat="klass in klasses" value="{{klass.id_class}}">{{klass.class_number}}{{klass.class_character}}</option>
+        <select ng-model="student.idClass" required class="slct" name="class-number" id="classNumber">
+            <option ng-repeat="klass in klasses" value="{{klass.id}}">{{klass.number}}{{klass.letter}}</option>
         </select>
     </div>
     <fieldset>

@@ -19,3 +19,5 @@ DELETE FROM Student WHERE id_student=1;
 
 
 drop trigger correct_mark_trigger on Student;
+
+//todo on update trigger

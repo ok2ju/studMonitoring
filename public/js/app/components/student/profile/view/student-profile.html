@@ -3,31 +3,34 @@
     <div class="user-info-wrapper">
         <a href="" class="user-photo"><img src="images/user4.jpg" alt=""></a>
         <div class="user-info">
-            <h1 class="user-name">{{student.name}} {{student.surname}}</h1>
+            <h1 class="user-name">{{student.surname}} {{student.name}} {{student.middlename}}</h1>
             <ul class="details">
-                <li>
-                    <span class="dob-label label">Date of birth:</span>
-                    <time class="dob-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">
-                        {{student.dateenrollment | date}}
+                <li ng-if="student.dob">
+                    <span class="label">Date of birth:</span>
+                    <time datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">
+                        {{student.dob | date}}
                     </time>
                 </li>
                 <li>
-                    <span class="address-label label">Address:</span>
-                    <span class="address">{{student.state}}, {{student.city}}, {{student.street}}</span>
+                    <span class="label">Address:</span>
+                    <span>{{student.state}}, {{student.city}}, {{student.street}}</span>
                 </li>
                 <li>
-                    <span class="class-label label">Class:</span>
-                    <span class="class"> {{student.class_number}} {{student.class_character}}</span>
+                    <span class="label">Class:</span>
+                    <span> {{student.classnumber}} {{student.classletter}}</span>
                 </li>
                 <li>
-                    <span class="join-label label">Joined on:</span>
-                    <time class="join-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title="">
-                        {{student.dateenrollment | date}}
-                    </time>
+                    <span class="label">Login:</span>
+                    <span>{{student.username}}</span>
                 </li>
                 <li>
-                    <span class="login-label label">login:</span>
-                    <span class="login">vakulich_av_11</span>
+                    <span class="login-label label">Phone:</span>
+                    <span class="login">{{student.phone}}</span>
+                </li>
+
+                <li ng-if="student.email">
+                    <span class="label">Email:</span>
+                    <span>{{student.email}}</span>
                 </li>
             </ul>
             <div class="buttons-wrapper">

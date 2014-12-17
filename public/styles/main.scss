@@ -533,6 +533,10 @@ fieldset {
 		padding: 10px 20px 10px 50px;
 	}
 
+	.ng-invalid.ng-touched {
+	  border: 1px solid red;
+	}
+
 	.floated-input {
 		float: left;
 		width: 200px;

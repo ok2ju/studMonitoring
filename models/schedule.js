@@ -8,10 +8,10 @@ module.exports = {
     var s = schedule;
     var sql = "insert into Schedule " +
       "values($1, $2, $3, $4, $5);";
-    s.week_day = new Date(s.week_day);
+    s.weekDay = new Date(s.weekDay);
     s.time = new Date(s.time);
-    s.week_day.setHours(s.time.getHours(), s.time.getMinutes());
-    pg.executeSql(sql, [s.id_classroom, s.id_subject, s.id_class, s.id_teacher, s.week_day], callback);
+    s.weekDay.setHours(s.time.getHours(), s.time.getMinutes());
+    pg.executeSql(sql, [s.classroomId, s.subjectId, s.classId, s.teacherId, s.weekDay], callback);
   },
 
   list : function(classId, callback) {
@@ -19,22 +19,11 @@ module.exports = {
     var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
     var last = first + 6; // last day is the first day + 6
 
-    var firstday = new Date(curr.setDate(first));
-    var lastday = new Date(curr.setDate(last)).toUTCString();
+    var firstDay = new Date(curr.setDate(first));
+    var lastDay = new Date(curr.setDate(last));
 
-    var sql = "select week_day, classroom_number, title, "+
-      "class_number, class_character, t.name, t.surname, "+
-      "count(*) over (partition by to_char(week_day, 'yyyy:mm:dd')) as number_of_lessons " +
-      "from Classroom, Subject, Class, Teacher t, Schedule "+
-      "where Schedule.id_classroom = Classroom.id and "+
-      "Schedule.id_subject = Subject.id and "+
-      "Schedule.id_class = Class.id and "+
-      "Schedule.id_teacher = t.id and "+
-      "Class.id = $1 and "+
-      "(Schedule.week_day >= $2 and Schedule.week_day <= $3) " +
-      "group by week_day, classroom_number, title, class_number, class_character, t.name, t.surname "+
-      "order by 1 asc";
+    var sql = "select * from scheduleList($1, $2, $3);";
 
-    pg.executeSql(sql, [classId, firstday, lastday], callback);
+    pg.executeSql(sql, [classId, firstDay, lastDay], callback);
   }
 };

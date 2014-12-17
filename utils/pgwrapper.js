@@ -3,17 +3,9 @@
  */
 
 var pg = require('pg'),
-  conString = 'pg://postgres:admin@localhost:5432/study';
-
+    conf = require('../config/db');
 
 module.exports.withConnection = function withConnection(callback) {
-  var conf = {
-    user:"postgres",
-    password:"admin",
-    host:"localhost",
-    database:"study"
-  };
-
   pg.connect(conf, function(err, client, done) {
     if(err) {
       console.error('error fetching client from pool', err);
