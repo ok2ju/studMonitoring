@@ -20,4 +20,33 @@ DELETE FROM Student WHERE id_student=1;
 
 drop trigger correct_mark_trigger on Student;
 
-//todo on update trigger
+
+-- ON INSERT TRIGGER
+Create Function ignore_dups() Returns Trigger
+As $$
+Begin
+    If Exists (
+        Select
+            *
+        From
+            Student s
+        Where
+            s.name = NEW.name
+            And s.surname = NEW.surname
+    ) Then
+        Return NULL;
+    End If;
+    Return NEW;
+End;
+$$ Language plpgsql;
+
+Create Trigger ignore_dups
+    Before Insert On Student
+    For Each Row
+    Execute Procedure ignore_dups();
+
+
+--Проверка работы триггера 
+INSERT INTO Student values(999, 'Dima', 'Petrov', 'M', 'dima1', 'dima1', 'Кленовая1', 'khjk', 'jkjk', 'student', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 5);
+
+drop trigger ignore_dups on Student;
