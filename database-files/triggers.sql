@@ -50,3 +50,37 @@ Create Trigger ignore_dups
 INSERT INTO Student values(999, 'Dima', 'Petrov', 'M', 'dima1', 'dima1', 'Кленовая1', 'khjk', 'jkjk', 'student', TO_DATE('1994-05-03', 'yyyy-mm-dd'), 1, 5);
 
 drop trigger ignore_dups on Student;
+
+
+-- ON UPDATE TRIGGER
+CREATE FUNCTION log_update()
+  RETURNS trigger AS
+$BODY$
+BEGIN
+    IF NEW.mark <> OLD.mark THEN
+         INSERT INTO Marks_log(marks_id, mark, study_year, semester, id_subject, id_student, changed_on)
+         VALUES(OLD.id,OLD.mark, OLD.study_year, OLD.semester, OLD.id_subject, OLD.id_student, now());
+    END IF;
+ 
+    RETURN NEW;
+END;
+$BODY$
+
+CREATE TRIGGER log_update
+    BEFORE UPDATE ON Marks
+    FOR EACH ROW
+    EXECUTE PROCEDURE log_update();
+
+CREATE SEQUENCE marks_log_seq START 1;
+
+CREATE TABLE Marks_log
+(
+    id SERIAL DEFAULT nextval('marks_log_seq'::regclass) PRIMARY KEY,
+    marks_id integer not null,
+    mark integer,
+    study_year integer,
+    semester integer,
+    id_subject integer,
+    id_student integer,
+    changed_on timestamp(6) not null
+);
