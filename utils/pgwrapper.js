@@ -5,17 +5,17 @@
 var pg = require('pg'),
     conf = require('../config/db');
 
-module.exports.withConnection = function withConnection(callback) {
+function withConnection(callback) {
   pg.connect(conf, function(err, client, done) {
     if(err) {
       console.error('error fetching client from pool', err);
     }
     callback(err, client, done);
   });
-};
+}
 
-module.exports.executeSql =  function executeSql(sql, values, callback) {
-  module.exports.withConnection(function(err, client, done) {
+function executeSql(sql, values, callback) {
+  withConnection(function(err, client, done) {
     if(typeof values === 'function') {
       callback = values;
     }
@@ -38,7 +38,12 @@ module.exports.executeSql =  function executeSql(sql, values, callback) {
     if(typeof values === 'function') {
       client.query(sql, clientCallback);
     } else {
-      client.query(sql, values, callback);
+      client.query(sql, values, clientCallback);
     }
   });
+}
+
+module.exports = {
+  withConnection: withConnection,
+  executeSql: executeSql
 };

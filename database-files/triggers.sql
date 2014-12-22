@@ -15,7 +15,7 @@ BEFORE DELETE ON Student FOR EACH ROW
 EXECUTE PROCEDURE correct_mark ();
 
 --Проверка работы триггера 
-DELETE FROM Student WHERE id_student=1;
+DELETE FROM Student WHERE id=1;
 
 
 drop trigger correct_mark_trigger on Student;
@@ -55,7 +55,7 @@ drop trigger ignore_dups on Student;
 -- ON UPDATE TRIGGER
 CREATE FUNCTION log_update()
   RETURNS trigger AS
-$BODY$
+$$
 BEGIN
     IF NEW.mark <> OLD.mark THEN
          INSERT INTO Marks_log(marks_id, mark, study_year, semester, id_subject, id_student, changed_on)
@@ -64,7 +64,7 @@ BEGIN
  
     RETURN NEW;
 END;
-$BODY$
+$$ Language plpgsql;
 
 CREATE TRIGGER log_update
     BEFORE UPDATE ON Marks
